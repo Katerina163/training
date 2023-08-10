@@ -1,7 +1,7 @@
 package com.github.Katerina163.algorithm;
 
-public class QuickSort {
-    public static void sort(int[] array, int left, int right) {
+public class QuickSort implements Sort {
+    public void sort(int[] array, int left, int right) {
         if (array.length <= 1 || left >= right) {
             return;
         }
@@ -32,5 +32,10 @@ public class QuickSort {
         if (right > low) {
             sort(array, low, right);
         }
+    }
+
+    @Override
+    public void sort(int[] array) {
+        sort(array, 0, array.length - 1);
     }
 }
